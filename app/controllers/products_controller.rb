@@ -12,7 +12,7 @@ class ProductsController < ApplicationController
 
 	  respond_to do |format|
 	    if @product.save
-	      format.html { render action: "create" }
+	      format.html { redirect_to @product, notice: 'Product was successfully created.' }
 	      format.json { render json: @product }
 	    else
 	      format.html { render action: "new" }
